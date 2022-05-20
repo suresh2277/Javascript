@@ -75,7 +75,26 @@
 // // *****************************************************
 // // ---------20.Type Conversion & Type Coercion----------
 // // *****************************************************
+//Type Cnversion
 const inputYear = "1991";
 console.log(inputYear + 18);
 const inputYearInNumber = Number(inputYear);
 console.log(inputYearInNumber + 18);
+
+// Similarly we can convert number to a stirng
+const age = 22;
+const firstName = String(22);
+console.log(firstName + 20);
+
+//Type Coercion
+console.log("Iam " + 23 + " years old.");
+
+console.log("23" + "10" + 5);
+console.log("23" + "10" - 5);
+console.log("23" - "10" - 5);
+console.log(("23" + "10") / 5);
+console.log("23" + "10" / 5);
+
+let n = "1" + 1;
+n = n - 1;
+console.log(n);
