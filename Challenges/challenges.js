@@ -52,3 +52,81 @@
 // } else {
 //   console.log(`John's BMI(${johnBMI}) is higher than Mark's BMI(${markBMI}).`);
 // }
+
+// // *****************************************************
+// // --------------------Challenge - 3--------------------
+// // *****************************************************
+// const dolphinScoreOne = 96;
+// const dolphinScoreTwo = 108;
+// const dolphinScoreThree = 89;
+// const dolphinAverage =
+//   (dolphinScoreOne + dolphinScoreTwo + dolphinScoreThree) / 3;
+// console.log(`Team Dolphins Score : ${dolphinAverage}`);
+
+// const koalaScoreOne = 88;
+// const koalaScoreTwo = 91;
+// const koalaScoreThree = 110;
+// const kolaaAverage = (koalaScoreOne + koalaScoreTwo + koalaScoreThree) / 3;
+// console.log(`Team Koalas Score : ${kolaaAverage}`);
+
+// if (dolphinAverage > kolaaAverage) {
+//   console.log("Team Dolphin's are the WINNERS 🏆.");
+// } else if (kolaaAverage > dolphinAverage) {
+//   console.log("Team Koala's are the WINNERS 🏆.");
+// } else {
+//   console.log(
+//     "Both teams played well and concluded the competiiton as a DRAW."
+//   );
+// }
+
+//BONUS-1
+const dolphinScoreOne = 97;
+const dolphinScoreTwo = 112;
+const dolphinScoreThree = 101;
+const dolphinAverage =
+  (dolphinScoreOne + dolphinScoreTwo + dolphinScoreThree) / 3;
+console.log(`Team Dolphins Score : ${dolphinAverage}`);
+
+const koalaScoreOne = 109;
+const koalaScoreTwo = 95;
+const koalaScoreThree = 123;
+const kolaaAverage = (koalaScoreOne + koalaScoreTwo + koalaScoreThree) / 3;
+console.log(`Team Koalas Score : ${kolaaAverage}`);
+
+const minScore = 100;
+
+if (dolphinAverage > kolaaAverage && dolphinAverage > minScore) {
+  console.log("Team Dolphin's are the WINNERS 🏆.");
+} else if (kolaaAverage > dolphinAverage && kolaaAverage > minScore) {
+  console.log("Team Koala's are the WINNERS 🏆.");
+} else {
+  console.log(
+    "Both teams played well and concluded the competiiton as a DRAW."
+  );
+}
+
+//BONUS-2
+// const dolphinScoreOne = 97;
+// const dolphinScoreTwo = 112;
+// const dolphinScoreThree = 101;
+// const dolphinAverage =
+//   (dolphinScoreOne + dolphinScoreTwo + dolphinScoreThree) / 3;
+// console.log(`Team Dolphins Score : ${dolphinAverage}`);
+
+// const koalaScoreOne = 109;
+// const koalaScoreTwo = 95;
+// const koalaScoreThree = 123;
+// const kolaaAverage = (koalaScoreOne + koalaScoreTwo + koalaScoreThree) / 3;
+// console.log(`Team Koalas Score : ${kolaaAverage}`);
+
+// const minScore = 100;
+
+// if (dolphinAverage > kolaaAverage && dolphinAverage > minScore) {
+//   console.log("Team Dolphin's are the WINNERS 🏆.");
+// } else if (kolaaAverage > dolphinAverage && kolaaAverage > minScore) {
+//   console.log("Team Koala's are the WINNERS 🏆.");
+// } else {
+//   console.log(
+//     "Both teams played well and concluded the competiiton as a DRAW."
+//   );
+// }
