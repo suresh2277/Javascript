@@ -227,3 +227,25 @@
 // // *****************************************************
 //Expressions always return a value(4 * 3)
 //Statements are those which just prints what user defines, Mostly statements are those which ends with ;
+
+// // *****************************************************
+// // ---------28.THE CONDITIONAL(TERNARY)OPERATOR---------
+// // *****************************************************
+// const age = 15;
+// age >= 18
+//   ? console.log("I'am good with a glass of wine🍷.")
+//   : console.log("I'am good with a softdirnk🥤.");
+
+// //OR
+// const drink = age >= 18 ? "Wine🍷" : "Softdirnk🥤";
+// console.log(drink);
+
+// //In template literals, we cannot use an if/else statement, but we can use ternary operator in template literal;
+// console.log(
+//   `I would like to have some ${age >= 18 ? "Wine🍷" : "Softdirnk🥤"}`
+// );
+
+// *****************************************************
+// ---------30.JS RELEASES: ES5, ES6+ & ESNext----------
+// *****************************************************
+//Though we are using ES6, It is better to learn how things used to work in ES5, Because there might be still applications in organizations which are built on Es5 and left without changing.

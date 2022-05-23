@@ -130,3 +130,20 @@ if (dolphinAverage > kolaaAverage && dolphinAverage > minScore) {
 //     "Both teams played well and concluded the competiiton as a DRAW."
 //   );
 // }
+
+// *****************************************************
+// --------------------CHALLENGE - 4--------------------
+// *****************************************************
+const bill = Number(prompt(`Enter the Value of the bill`));
+if (bill < 50) {
+  console.log(
+    `The bill was ${bill}, The tip was 0 and the Total amount is ${bill}`
+  );
+} else {
+  let tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+  console.log(
+    `The bill was ${bill}, The tip was ${tip} and the Total amount is ${
+      bill + tip
+    }`
+  );
+}
