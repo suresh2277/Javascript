@@ -153,6 +153,99 @@
 
 // console.log(fruitProcessor(2, 5));
 
-// *****************************************************
-// ----------------37.REVIEWING FUNCTIONS---------------
-// *****************************************************
+// // *****************************************************
+// // -------------39.INTRODUCTION TO ARRRAYS--------------
+// // *****************************************************
+// //Arrays are the first data structures
+// //In general, if we have to save our friends names in a database we usually assign each name to a variable and save them, which is a hectic task to do if the list is bigger.
+// let friend1 = "Suresh";
+// let friend2 = "Teja";
+// let friend3 = "Vikas";
+// let friend4 = "Jyotish";
+
+// //As the list goes on, it is getting a tidious task to assign each one of them to a new variable, To avoid this we have a data structure called Array
+// let friends = ["Suresh", "Teja", "Vikas", "Jyotish", 65498];
+// console.log(friends);
+
+// //We can also create array in another way, which is in a function form. But we generally use Square syntax.
+// let year = new Array(1994, 1896, 1924, 2001, "January");
+// console.log(year);
+// //We can mix init and strings in an array in JS.
+
+// //To access individual items in Array
+// console.log(friends[0]);
+// console.log(friends[2]);
+// console.log(year[2]);
+// console.log(year[5]); // It gives an undefined msg since the mentioned is out of range
+
+// //To know the length of an array or to know the number of items in an array
+// console.log(friends.length);
+
+// //We can change an elemnt valus inside an array using its index
+// friends[1] = "Nikhil";
+// console.log(friends);
+// //An array is not a primitive value and hence the value is not immutable, it means if we keep const in place of let while declaring friends array, and later we can change the value inside it even if it is const
+
+// //We can also put one array inside another array
+// const info = ["firstName", friends];
+// console.log(info);
+
+// //Exercise - Implementing Arrays with a function
+// let calAge = function (birthYear) {
+//   return 2022 - birthYear;
+// };
+// const years = [1990, 1993, 1985, 2001, 1996];
+
+// const age1 = calAge(years[0]);
+// const age2 = calAge(years[2]);
+// const age3 = calAge(years[years.length - 1]);
+
+// //We can also save these individual values in an array
+// const ages = [age1, age2, age3];
+// //OR
+// const age = [
+//   calAge(years[0]),
+//   calAge(years[2]),
+//   calAge(years[years.length - 1]),
+// ];
+// console.log(ages);
+// console.log(age);
+
+// // *****************************************************
+// // ---------40.BASIC ARRAY OPERATIONS(METHODS)----------
+// // *****************************************************
+//JS has some built in functions that we can directly apply on arrays. These are called methods, also can be known as array operations.
+//There are countless array methods in JS, Basic ones are
+
+const friends = ["Suresh", "Teja", "Vikas", "Jyotish", 65498];
+
+//Add Elemetns to Array
+
+//1. PUSH - This method adds elements at the end of an array.
+friends.push("Nikhil");
+console.log(friends);
+
+//2. UNSHIFT - This method is used to add elements at the beginning of the array.
+friends.unshift("Deepu");
+console.log(friends);
+
+//Remove Elements in an Array
+
+//1. POP - This means to remove the last element in an array.
+friends.pop();
+console.log(friends);
+
+//2. SHIFT - To remove first element in an array.
+friends.shift();
+console.log(friends);
+
+//If we want to find an element in an array, or to find the position number of an element
+console.log(friends.indexOf("Teja"));
+
+//If we give an elemtn which is not present in the array
+console.log(friends.indexOf("Deepu"));
+
+//To check whether if any element is present in the array or not we have include function which is introduced in ES6.
+console.log(friends.includes("Teja"));
+console.log(friends.includes("teja"));
+//It is case sensitivr, hence Teja and teja are 2 different words, so spell correctly
