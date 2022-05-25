@@ -214,38 +214,229 @@
 // // *****************************************************
 // // ---------40.BASIC ARRAY OPERATIONS(METHODS)----------
 // // *****************************************************
-//JS has some built in functions that we can directly apply on arrays. These are called methods, also can be known as array operations.
-//There are countless array methods in JS, Basic ones are
+// //JS has some built in functions that we can directly apply on arrays. These are called methods, also can be known as array operations.
+// //There are countless array methods in JS, Basic ones are
 
-const friends = ["Suresh", "Teja", "Vikas", "Jyotish", 65498];
+// const friends = ["Suresh", "Teja", "Vikas", "Jyotish", 65498];
 
-//Add Elemetns to Array
+// //Add Elemetns to Array
 
-//1. PUSH - This method adds elements at the end of an array.
-friends.push("Nikhil");
-console.log(friends);
+// //1. PUSH - This method adds elements at the end of an array.
+// friends.push("Nikhil");
+// console.log(friends);
 
-//2. UNSHIFT - This method is used to add elements at the beginning of the array.
-friends.unshift("Deepu");
-console.log(friends);
+// //2. UNSHIFT - This method is used to add elements at the beginning of the array.
+// friends.unshift("Deepu");
+// console.log(friends);
 
-//Remove Elements in an Array
+// //Remove Elements in an Array
 
-//1. POP - This means to remove the last element in an array.
-friends.pop();
-console.log(friends);
+// //1. POP - This means to remove the last element in an array.
+// friends.pop();
+// console.log(friends);
 
-//2. SHIFT - To remove first element in an array.
-friends.shift();
-console.log(friends);
+// //2. SHIFT - To remove first element in an array.
+// friends.shift();
+// console.log(friends);
 
-//If we want to find an element in an array, or to find the position number of an element
-console.log(friends.indexOf("Teja"));
+// //If we want to find an element in an array, or to find the position number of an element
+// console.log(friends.indexOf("Teja"));
 
-//If we give an elemtn which is not present in the array
-console.log(friends.indexOf("Deepu"));
+// //If we give an elemtn which is not present in the array
+// console.log(friends.indexOf("Deepu"));
 
-//To check whether if any element is present in the array or not we have include function which is introduced in ES6.
-console.log(friends.includes("Teja"));
-console.log(friends.includes("teja"));
-//It is case sensitivr, hence Teja and teja are 2 different words, so spell correctly
+// //To check whether if any element is present in the array or not we have include function which is introduced in ES6.
+// console.log(friends.includes("Teja"));
+// console.log(friends.includes("teja"));
+// //It is case sensitive, Hence Teja and teja are 2 different words, so spell correctly
+
+// // *****************************************************
+// // -------------42.INTRODUCTION TO OBJECTS--------------
+// // *****************************************************
+// // Objects are also a data structures.
+// // Till now we have use the arrays to store mutiple values in single variable.
+
+// //In objects we define Key - Value pairs.
+
+// const info = {
+//   firstName: "Emani",
+//   lastName: "Suresh",
+//   age: 2022 - 1993,
+//   friends: ["Teja", "Nikhil", "Deepu"],
+// };
+
+// //In abve example, firstName, lastName, age and friends are keys and respective details are the values. These are combinely known as properties.
+// //In arrays, the order which we specify always matters, since to retrieve an element we use their index numbers, whereas for objects we dnt need to see for the order.
+
+// // *****************************************************
+// // -------------43.DOT Vs. BRACKET NOTATION-------------
+// // *****************************************************
+// const info = {
+//   firstName: "Emani",
+//   lastName: "Suresh",
+//   age: 2022 - 1993,
+//   friends: ["Teja", "Nikhil", "Deepu"],
+// };
+
+// console.log(info);
+// //In this way we see all the properties present inside the object.
+
+// //To access any particular property of an object, we use DOT NOTATION.
+// console.log(info.lastName);
+
+// //We can also access required property of an onbject by BRACKET NOTATION.
+// console.log(info["lastName"]);
+
+// //How to add new properties to an object
+// info.location = "Hyderabad";
+// console.log(info);
+
+// //Challenge
+// console.log(
+//   `${info.lastName} has ${info.friends.length} friends, and the best one is ${info.friends[1]}.`
+// );
+
+// // *****************************************************
+// // ------------------44.OBJECT METHODS------------------
+// // *****************************************************
+// //Any function that is attached to Object is called Method. We can add function in an object by funcion expression notation, since we can use the varibale storing the functiona a key in the object and the function as value to that key.Function declaration doesn't work here.
+
+// const info = {
+//   firsName: "Emani",
+//   lastName: "Suresh",
+//   birthYear: 1993,
+//   job: "teacher",
+//   friends: ["Teja", "Nikhil", "Deepu"],
+//   hasDriversLicense: true,
+//   // calAge: function (year) {
+//   //   return 2022 - year;
+
+//   // calAge: function () {
+//      //return 2022 - this.birthYear;
+//   // },
+//   calAge: function () {
+//     this.age = 2022 - this.birthYear;
+//     return this.age;
+//   },
+//   getSummary: function () {
+//     return `${this.firsName} is a ${this.calAge()}-year old ${
+//       this.job
+//     } and he has ${this.hasDriversLicense ? "a" : "no"} drivers license.`;
+//   },
+// };
+// //this keyword is used to follow DRY concept. It means, even if the nae of the object(info) is changed, there is no need to change the return function. this will automatically taes the entire object.
+// // console.log(info.calAge());
+// // console.log(info["calAge"]());
+
+// //We can also create new property using ths keyword
+// console.log(info.age);
+
+// //Challenge
+// console.log(info.getSummary());
+
+// // *****************************************************
+// // -------------46.ITERATION : THE FOR LOOP-------------
+// // *****************************************************
+// // console.log("Lifiting weights repetition 1 🏋️‍♂️");
+// // console.log("Lifiting weights repetition 2 🏋️‍♂️");
+// // console.log("Lifiting weights repetition 3 🏋️‍♂️");
+// // console.log("Lifiting weights repetition 4 🏋️‍♂️");
+// // console.log("Lifiting weights repetition 5 🏋️‍♂️");
+// // console.log("Lifiting weights repetition 6 🏋️‍♂️");
+// // console.log("Lifiting weights repetition 7 🏋️‍♂️");
+// // console.log("Lifiting weights repetition 8 🏋️‍♂️");
+// // console.log("Lifiting weights repetition 9 🏋️‍♂️");
+// // console.log("Lifiting weights repetition 10 🏋️‍♂️");
+
+// //Instead of writing the same line for 10 times we can make use of loops
+// //For Loop
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep} 🏋️‍♂️`);
+// }
+
+// // *****************************************************
+// // -------47.LOOPING ARRAYS,BREAKING & CONTINUING-------
+// // *****************************************************
+// //One of the most used applicatons of for loops is to loop through arrays.
+// const suresh = ["Suresh", "Nikhil", 1993, ["Teja", "Deepu", "Vikas"]];
+// const types = [];
+
+// for (let i = 0; i < suresh.length; i++) {
+//   console.log(suresh[i], typeof suresh[i]);
+//   // types[i] = typeof suresh[i];
+
+//   //-------------OR----------------
+//   types.push(typeof suresh[i]);
+// }
+// console.log(types);
+
+// //Example:
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++) {
+//   // ages[i] = 2022 - years[i];
+//   ages.push(2022 - years[i]);
+// }
+// console.log(ages);
+
+// //CONTINUE & BREAK
+// //CONTINUE -  This is used to skip that iteration and continue to the other one.
+// for (let i = 0; i < suresh.length; i++) {
+//   if (typeof suresh[i] !== "string") {
+//     continue;
+//   }
+//   console.log(suresh[i], typeof suresh[i]);
+// }
+// //Only string values are lgged in console.
+
+// //BREAK - This is used to completely terminate the loop.
+// for (let i = 0; i < suresh.length; i++) {
+//   if (typeof suresh[i] === "number") {
+//     break;
+//   }
+//   console.log(suresh[i], typeof suresh[i]);
+// }
+// //Values till a number ccurs in an array will log in console.
+
+// // *****************************************************
+// // ---------48.LOOPING BACKWARDS & OPS IN LOOPS---------
+// // *****************************************************
+// const suresh = ["Suresh", "Nikhil", 1993, ["Teja", "Deepu", "Vikas"]];
+// for (let i = suresh.length - 1; i >= 0; i--) {
+//   console.log(i, suresh[i]);
+// }
+
+// //LOOP INSIDE LOOP
+// for (let exercise = 1; exercise <= 3; exercise++) {
+//   console.log(`************Starting Exercise - ${exercise}`);
+//   for (let rep = 1; rep <= 5; rep++) {
+//     console.log(`Exercise ${exercise} : Lifting weights rep - ${rep} 🏋️‍♂️`);
+//   }
+// }
+
+// // *****************************************************
+// // ------------------48.THE WHILE LOOP------------------
+// // *****************************************************
+// console.log("*****************From For loop*****************");
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep} 🏋️‍♂️`);
+// }
+
+// console.log("*****************From Whhile loop*****************");
+// let rep = 1;
+// while (rep <= 10) {
+//   console.log(`Lifting weights repetition ${rep} 🏋️‍♂️`);
+//   rep++;
+// }
+
+//Ex
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}.`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) {
+    console.log(`You rolled ${dice}, Loop is about to end.`);
+  }
+}
