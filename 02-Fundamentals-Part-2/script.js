@@ -170,7 +170,7 @@
 // //We can also create array in another way, which is in a function form. But we generally use Square syntax.
 // let year = new Array(1994, 1896, 1924, 2001, "January");
 // console.log(year);
-// //We can mix init and strings in an array in JS.
+// //We can mix int and strings in an array in JS.
 
 // //To access individual items in Array
 // console.log(friends[0]);
