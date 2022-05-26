@@ -92,21 +92,34 @@
 //   );
 // }
 
-// *******************************************
-// ----------------40.CHALLENGE-4-------------
-// *******************************************
-let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
-let tips = [];
-let totals = [];
+// // *******************************************
+// // ----------------40.CHALLENGE-4-------------
+// // *******************************************
 
-let calcTip = (bill) => {
-  let tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-  return tip;
-};
+// let calcTip = (bill) => {
+//   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// };
 
-for (let i = 0; i <= bills.length - 1; i++) {
-  tips.push(calcTip(bills[i]));
-  totals.push(tips[i] + bills[i]);
-}
-console.log(tips);
-console.log(totals);
+// let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+// let tips = [];
+// let totals = [];
+
+// for (let i = 0; i <= bills.length - 1; i++) {
+//   tips.push(calcTip(bills[i]));
+//   totals.push(tips[i] + bills[i]);
+// }
+// console.log(bills, tips, totals);
+
+// let average = 0;
+
+// //BONUS
+// let calcAverage = (arr) => {
+//   let sum = 0;
+//   for (let i = 0; i <= arr.length - 1; i++) {
+//     sum += arr[i];
+//   }
+//   return sum / arr.length;
+// };
+
+// console.log(calcAverage(totals));
+// console.log(calcAverage(tips));
