@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  height: 100vh;
+  /* background-image: linear-gradient(
+    to top left,
+    rgba(50, 158, 168, 1),
+    rgba(113, 168, 173, 0.5)
+  ); */
+  background-image: linear-gradient(
+    to left top,
+    rgba(30, 18, 68),
+    rgb(30, 18, 168)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  background: rgba(52, 158, 235, 0.2);
+  border-radius: 1rem;
+  display: flex;
+  overflow: hidden;
+}
+
+.player {
+  z-index: 0;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 0.5;
+  padding: 8rem 0;
+}
+
+.active {
+  background: rgba(102, 204, 255, 0.5);
+}
+
+.active .heading {
+  color: black;
+  font-weight: 600;
+}
+
+.active .current {
+  opacity: 1;
+}
+
+.heading {
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 100;
+  letter-spacing: 0.4rem;
+}
+
+.tscore {
+  font-size: 7rem;
+}
+
+.winner {
+  color: black;
+  background: cyan;
+}
+
+.winner-title {
+  position: absolute;
+  top: 45%;
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+  color: black;
+  font-weight: 600;
+}
+
+.current {
+  margin-top: 20rem;
+  text-transform: uppercase;
+  background: rgb(30, 18, 220);
+  text-align: center;
+  width: 40%;
+  height: 22%;
+  border-radius: 1rem;
+  opacity: 0.8;
+  padding: 10px;
+}
+
+.cscore-label {
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.cscore-1,
+.cscore-2 {
+  font-size: 4rem;
+}
+
+.btn {
+  z-index: 5;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  border: none;
+  padding: 1.1rem 3rem;
+  border-radius: 10rem;
+  opacity: 0.8;
+  cursor: pointer;
+  box-shadow: 0 0 7rem rgb(0, 0, 0);
+  letter-spacing: 0.3rem;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  box-shadow: 0 1rem 5rem rgb(81, 205, 221);
+  opacity: 1;
+}
+
+.btn::first-letter {
+  font-size: 1.8rem;
+}
+
+.new {
+  top: 10%;
+}
+
+.roll {
+  top: 67%;
+}
+
+.hold {
+  top: 81%;
+}
+
+.dice {
+  position: absolute;
+  width: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  top: 35%;
+  z-index: 10;
+  border-radius: 1rem;
+}
+
+.hidden {
+  display: none;
+}
