@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reach 100</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <section class="player player1 active">
+        <h1 class="heading">Player 1</h1>
+        <p class="tscore tscore-1">0</p>
+        <p class="winner-title hidden">🏆WINNER🏆</p>
+        <div class="current">
+          <p class="cscore-label">current score</p>
+          <p class="cscore-1">0</p>
+        </div>
+      </section>
+      <section class="player player2">
+        <h1 class="heading">Player 2</h1>
+        <p class="tscore tscore-2">0</p>
+        <p class="winner-title hidden">🏆WINNER🏆</p>
+        <div class="current">
+          <p class="cscore-label">current score</p>
+          <p class="cscore-2">0</p>
+        </div>
+      </section>
+
+      <img src="/images/dice-3.png" alt="Dice" class="dice hidden" />
+      <button class="btn new">🔃 New game</button>
+      <button class="btn roll">🎲 Roll Dice</button>
+      <button class="btn hold">✋🏼 Hold</button>
+    </div>
+    <script src="/script.js"></script>
+  </body>
+</html>
