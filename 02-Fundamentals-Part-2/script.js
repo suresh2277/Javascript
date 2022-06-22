@@ -242,7 +242,7 @@
 // //If we want to find an element in an array, or to find the position number of an element
 // console.log(friends.indexOf("Teja"));
 
-// //If we give an elemtn which is not present in the array
+// //If we give an element which is not present in the array
 // console.log(friends.indexOf("Deepu"));
 
 // //To check whether if any element is present in the array or not we have include function which is introduced in ES6.
