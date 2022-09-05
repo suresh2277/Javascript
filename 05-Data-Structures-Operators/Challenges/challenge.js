@@ -1,45 +1,45 @@
 "use strict";
 // /************Challenge-1************/
-// const game = {
-//   team1: "Bayern Munich",
-//   team2: "Borrussia Dortmund",
-//   players: [
-//     [
-//       "Neuer",
-//       "Pavard",
-//       "Martinez",
-//       "Alaba",
-//       "Davies",
-//       "Kimmich",
-//       "Goretzka",
-//       "Coman",
-//       "Muller",
-//       "Gnarby",
-//       "Lewandowski",
-//     ],
-//     [
-//       "Burki",
-//       "Schulz",
-//       "Hummels",
-//       "Akanji",
-//       "Hakimi",
-//       "Weigl",
-//       "Witsel",
-//       "Hazard",
-//       "Brandt",
-//       "Sancho",
-//       "Gotze",
-//     ],
-//   ],
-//   score: "4:0",
-//   scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
-//   date: "Nov 9th, 2037",
-//   odds: {
-//     team1: 1.33,
-//     x: 3.25,
-//     team2: 6.5,
-//   },
-// };
+const game = {
+  team1: "Bayern Munich",
+  team2: "Borrussia Dortmund",
+  players: [
+    [
+      "Neuer",
+      "Pavard",
+      "Martinez",
+      "Alaba",
+      "Davies",
+      "Kimmich",
+      "Goretzka",
+      "Coman",
+      "Muller",
+      "Gnarby",
+      "Lewandowski",
+    ],
+    [
+      "Burki",
+      "Schulz",
+      "Hummels",
+      "Akanji",
+      "Hakimi",
+      "Weigl",
+      "Witsel",
+      "Hazard",
+      "Brandt",
+      "Sancho",
+      "Gotze",
+    ],
+  ],
+  score: "4:0",
+  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+  date: "Nov 9th, 2037",
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
 
 // /**********Task - 1***********/
 // const players1 = [...game.players[0]];
@@ -77,3 +77,44 @@
 // /**********Task - 7***********/
 // team1 > team2 && console.log("Team 1 is like to win");
 // team1 < team2 && console.log("Team 2 is like to win");
+
+// /************Challenge-2************/
+//Task - 1
+// for (const [goal, player] of Object.entries(game.scored)) {
+//   console.log(`Goal ${Number(goal) + 1} : ${player}`);
+// }
+
+// for (const [goal, player] of game.scored.entries()) {
+//   console.log(`Goal ${goal + 1} : ${player}`);
+// }
+
+//Task - 2
+// let sum = 0;
+// let average = 0;
+// const odds = Object.entries(game.odds);
+// for (const odd of odds) {
+//   sum += odd;
+// }
+// average = sum / odds.length;
+// console.log(average);
+
+//Task-3
+//My Solution
+// console.log(`Odd of Victory ${game.team1} : ${game.odds.team1}`);
+// console.log(`Odd of draw : ${game.odds.x}`);
+// console.log(`Odd of Victory ${game.team2} : ${game.odds.team2}`);
+
+//Jonas Solution
+// console.log(Object.entries(game.odds));
+
+// for (const [team, odd] of Object.entries(game.odds)) {
+//   const teamStr = team === "x" ? "Draw" : ` victory ${game[team]}`;
+//   console.log(`Odd of ${teamStr} is ${odd}`);
+// }
+
+//Task - 4
+const scorers = {};
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+console.log(scorers);
