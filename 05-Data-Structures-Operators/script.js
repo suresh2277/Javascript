@@ -528,30 +528,154 @@ const restaurant = {
 // console.log(users[0]?.name ?? "User array is empty");
 
 /*-------------114. Looping Objects : Object Keys, Values & Entries--------------*/
-//Keys
-const properties = Object.keys(openingHours);
+// //Keys
+// const properties = Object.keys(openingHours);
 
-let openStr = `We are open on ${properties.length} days : `;
+// let openStr = `We are open on ${properties.length} days : `;
 
-for (const day of properties) {
-  openStr += `${day} `;
-}
-console.log(openStr);
+// for (const day of properties) {
+//   openStr += `${day} `;
+// }
+// console.log(openStr);
 
-//Values
-const values = Object.values(openingHours);
-console.log(values);
+// //Values
+// const values = Object.values(openingHours);
+// console.log(values);
 
-//Entries
-const entries = Object.entries(openingHours);
-console.log(entries);
+// //Entries
+// const entries = Object.entries(openingHours);
+// console.log(entries);
 
-for (const x of entries) {
-  console.log(x);
-}
+// for (const x of entries) {
+//   console.log(x);
+// }
 
-//or
+// //or
 
-for (const [key, { open, close }] of entries) {
-  console.log(`On ${key}, We open at ${open} and close at ${close}`);
-}
+// for (const [key, { open, close }] of entries) {
+//   console.log(`On ${key}, We open at ${open} and close at ${close}`);
+// }
+
+// /*-------------116. Sets--------------*/
+// const ordersSet = new Set([
+//   "Pizza",
+//   "Pasta",
+//   "Risotto",
+//   "Pizza",
+//   "Risotto",
+//   "Pasta",
+// ]);
+// console.log(ordersSet);
+
+// //Case Sensitive
+// console.log(new Set("Suresh"));
+
+// //Size of a set
+// console.log(ordersSet.size);
+
+// //Finding an item inside a set
+// console.log(ordersSet.has("Pizza"));
+// console.log(ordersSet.has("Bread"));
+
+// //Adding an item to Set
+// ordersSet.add("Garlic Bread");
+// ordersSet.add("Garlic Bread");
+// console.log(ordersSet);
+
+// //Deleting items in a Set
+// ordersSet.delete("Pizza");
+// console.log(ordersSet);
+
+// //Looping a set
+// for (const order of ordersSet) {
+//   console.log(order);
+// }
+
+// //Use case of Sets
+// const staff = ["Waiter", "Chef", "Manager", "Waiter", "Chef", "Manager"];
+// let staffUnique = new Set(staff);
+// console.log(staffUnique);
+
+// //Creating a new array using set
+// staffUnique = [...new Set(staff)];
+// console.log(staffUnique);
+
+// //Clear all the elements from a set
+// ordersSet.clear();
+// console.log(ordersSet);
+
+// /*-------------117. Maps--------------*/
+// const rest = new Map();
+// rest.set("name", "Classico Italiano");
+// rest.set(1, "Firenze, Italy");
+// console.log(rest.set(2, "Lisbon,Portugal"));
+
+// rest
+//   .set("Categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"])
+//   .set("Open", 11)
+//   .set("Close", 23)
+//   .set(true, "We are open")
+//   .set(false, "We are closed");
+// console.log(rest);
+
+// // Retrieving an item from maps
+// console.log(rest.get("name"));
+// console.log(rest.get(true));
+
+// //Has Method
+// console.log(rest.has("name"));
+
+// //Delete Method
+// rest.delete(2);
+// console.log(rest);
+
+// //Size
+// console.log(rest.size);
+
+// //Clear
+// rest.clear();
+// console.log(rest);
+
+//Array as a key
+// rest.set([1, 2], "Test");
+// console.log(rest.get([1, 2])); // Will not retrieve this
+//Instead create a variable for array and assign that variable to retreive the value
+// const arr = [1, 2];
+// rest.set(arr, "Test");
+// console.log(rest.get(arr));
+
+// //DOM
+// rest.set(document.querySelector("h1"), "heading");
+// console.log(rest);
+
+// /*-------------118. Maps - Iterations--------------*/
+const question = new Map([
+  ["question", "What is the best programming language in the world?"],
+  [1, "C"],
+  [2, "Java"],
+  [3, "JavaScript"],
+  ["Correct", 3],
+  [true, "Correct"],
+  [false, "Try Again"],
+]);
+// console.log(question);
+// const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap);
+
+//Iteration
+// console.log(question.get("question"));
+// for (const [key, value] of question) {
+//   if (typeof key === "number") {
+//     console.log(`Option ${key} : ${value}`);
+//   }
+// }
+
+// const answer = Number(prompt("Your Answer?"));
+// // console.log(answer);
+// console.log(question.get(answer === question.get("Correct")));
+
+//Convert Map to Array
+console.log([...question]);
+console.log([...question.keys()]);
+console.log([...question.entries()]); // same as [...question]
+console.log([...question.values()]);
