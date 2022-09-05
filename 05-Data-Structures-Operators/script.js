@@ -526,3 +526,32 @@ const restaurant = {
 
 // //Using Optional Chaining
 // console.log(users[0]?.name ?? "User array is empty");
+
+/*-------------114. Looping Objects : Object Keys, Values & Entries--------------*/
+//Keys
+const properties = Object.keys(openingHours);
+
+let openStr = `We are open on ${properties.length} days : `;
+
+for (const day of properties) {
+  openStr += `${day} `;
+}
+console.log(openStr);
+
+//Values
+const values = Object.values(openingHours);
+console.log(values);
+
+//Entries
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const x of entries) {
+  console.log(x);
+}
+
+//or
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key}, We open at ${open} and close at ${close}`);
+}
