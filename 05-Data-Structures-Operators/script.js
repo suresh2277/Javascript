@@ -649,15 +649,15 @@ const restaurant = {
 // console.log(rest);
 
 // /*-------------118. Maps - Iterations--------------*/
-const question = new Map([
-  ["question", "What is the best programming language in the world?"],
-  [1, "C"],
-  [2, "Java"],
-  [3, "JavaScript"],
-  ["Correct", 3],
-  [true, "Correct"],
-  [false, "Try Again"],
-]);
+// const question = new Map([
+//   ["question", "What is the best programming language in the world?"],
+//   [1, "C"],
+//   [2, "Java"],
+//   [3, "JavaScript"],
+//   ["Correct", 3],
+//   [true, "Correct"],
+//   [false, "Try Again"],
+// ]);
 // console.log(question);
 // const hoursMap = new Map(Object.entries(openingHours));
 // console.log(hoursMap);
@@ -674,8 +674,11 @@ const question = new Map([
 // // console.log(answer);
 // console.log(question.get(answer === question.get("Correct")));
 
-//Convert Map to Array
-console.log([...question]);
-console.log([...question.keys()]);
-console.log([...question.entries()]); // same as [...question]
-console.log([...question.values()]);
+// //Convert Map to Array
+// console.log([...question]);
+// console.log([...question.keys()]);
+// console.log([...question.entries()]); // same as [...question]
+// console.log([...question.values()]);
+
+// /*-------------119. Summary : Which DataStructure to Use--------------*/
+//Theory
