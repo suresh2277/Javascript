@@ -682,3 +682,91 @@ const restaurant = {
 
 // /*-------------119. Summary : Which DataStructure to Use--------------*/
 //Theory
+
+// /*-------------120. Challenge--------------*/
+
+// /*-------------121. Working With Strings Part - 1--------------*/
+const airLine = "TAP Air Portugal";
+const plane = "A320";
+// console.log(plane[0]);
+// console.log(plane[1]);
+
+// //Length
+// console.log(airLine.length);
+// console.log("Ballari".length);
+
+// //Methods
+// //indexOf()
+// console.log(airLine.indexOf("r"));
+
+// //lastIndexOf()
+// console.log(airLine.lastIndexOf("r"));
+
+// //Sclice
+// console.log(airLine.slice(4, 9));
+
+// //Negatives
+// console.log(airLine.slice(-2));
+// console.log(airLine.slice(1, -1));
+
+// //Ex
+// const checkMiddleSeat = (seat) => {
+//   const s = seat.slice(-1);
+//   if (s === "B" || s === " E") {
+//     console.log("You got the middle Seat");
+//   } else {
+//     console.log("You are lucky");
+//   }
+// };
+// checkMiddleSeat("11C");
+// checkMiddleSeat("15E");
+// checkMiddleSeat("10C");
+// checkMiddleSeat("13B");
+// checkMiddleSeat("17C");
+// console.log(typeof airLine); // String
+// console.log(typeof new String(airLine)); // Object
+// console.log(typeof new String(airLine).slice(1)); // String
+
+// /*-------------121. Working With Strings Part - 2--------------*/
+//toLowerCase()
+console.log(airLine.toLowerCase());
+
+//toUpperCase()
+console.log(airLine.toUpperCase());
+
+//Fixing Capitalization in name
+const passenger = "sUrEsH";
+const passengerLower = passenger.toLowerCase();
+
+//Comparing Emails
+const email = "hello@suresh.io";
+const logInEmail = "  Hello@Suresh.Io";
+
+const normalizedEmail = logInEmail.toLowerCase().trim();
+console.log(email === normalizedEmail);
+
+//replace()
+const priceGB = "288,97#";
+const priceUs = priceGB.replace("#", "$").replace(",", ".");
+console.log(priceUs);
+
+//replaceAll()
+const announcement =
+  "All passengers come to boarding door 23. Boarding door 23!";
+console.log(announcement.replaceAll("door", "gate"));
+
+//Regular Expression to replace all the occurances of the given word
+console.log(announcement.replace(/door/, "gate"));
+
+//Practice
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes("knife") || baggage.includes("gun")) {
+    console.log("You are NOT allowed on board");
+  } else {
+    console.log("Welcomme aboard");
+  }
+};
+checkBaggage("I have a laptop, some food and a pocket knife");
+checkBaggage("Socks and camera");
+checkBaggage("Got some snacks and a gun for protection");
