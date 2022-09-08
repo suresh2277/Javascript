@@ -727,46 +727,84 @@ const plane = "A320";
 // console.log(typeof new String(airLine)); // Object
 // console.log(typeof new String(airLine).slice(1)); // String
 
-// /*-------------121. Working With Strings Part - 2--------------*/
-//toLowerCase()
-console.log(airLine.toLowerCase());
+// /*-------------122. Working With Strings Part - 2--------------*/
+// // toLowerCase()
+// console.log(airLine.toLowerCase());
 
-//toUpperCase()
-console.log(airLine.toUpperCase());
+// //toUpperCase()
+// console.log(airLine.toUpperCase());
 
-//Fixing Capitalization in name
-const passenger = "sUrEsH";
-const passengerLower = passenger.toLowerCase();
+// //Fixing Capitalization in name
+// const passenger = "sUrEsH";
+// const passengerLower = passenger.toLowerCase();
 
-//Comparing Emails
-const email = "hello@suresh.io";
-const logInEmail = "  Hello@Suresh.Io";
+// //Comparing Emails
+// const email = "hello@suresh.io";
+// const logInEmail = "  Hello@Suresh.Io";
 
-const normalizedEmail = logInEmail.toLowerCase().trim();
-console.log(email === normalizedEmail);
+// const normalizedEmail = logInEmail.toLowerCase().trim();
+// console.log(email === normalizedEmail);
 
-//replace()
-const priceGB = "288,97#";
-const priceUs = priceGB.replace("#", "$").replace(",", ".");
-console.log(priceUs);
+// //replace()
+// const priceGB = "288,97#";
+// const priceUs = priceGB.replace("#", "$").replace(",", ".");
+// console.log(priceUs);
 
-//replaceAll()
-const announcement =
-  "All passengers come to boarding door 23. Boarding door 23!";
-console.log(announcement.replaceAll("door", "gate"));
+// //replaceAll()
+// const announcement =
+//   "All passengers come to boarding door 23. Boarding door 23!";
+// console.log(announcement.replaceAll("door", "gate"));
 
-//Regular Expression to replace all the occurances of the given word
-console.log(announcement.replace(/door/, "gate"));
+// //Regular Expression to replace all the occurances of the given word
+// console.log(announcement.replace(/door/, "gate"));
 
-//Practice
-const checkBaggage = function (items) {
-  const baggage = items.toLowerCase();
-  if (baggage.includes("knife") || baggage.includes("gun")) {
-    console.log("You are NOT allowed on board");
-  } else {
-    console.log("Welcomme aboard");
+// //Practice
+// const checkBaggage = function (items) {
+//   const baggage = items.toLowerCase();
+//   if (baggage.includes("knife") || baggage.includes("gun")) {
+//     console.log("You are NOT allowed on board");
+//   } else {
+//     console.log("Welcomme aboard");
+//   }
+// };
+// checkBaggage("I have a laptop, some food and a pocket knife");
+// checkBaggage("Socks and camera");
+// checkBaggage("Got some snacks and a gun for protection");
+
+// /*-------------123. Working With Strings Part - 3--------------*/
+console.log("a+very+nice+string".split("+"));
+console.log("Suresh Emani".split(" "));
+
+//Split
+const [firstName, lastName] = "Suresh Emani".split(" ");
+console.log(firstName);
+console.log(lastName);
+
+//Join
+console.log([`Mr.${firstName}`, lastName].join(" "));
+
+//Captialize Name Function
+const capitalizedName = function (sentence) {
+  const words = sentence.split(" ");
+  const capital = [];
+  for (const word of words) {
+    // capital.push(word[0].toUpperCase() + word.slice(1));
+    //or
+    capital.push(word.replace(word[0], word[0].toUpperCase()));
   }
+  console.log(capital.join(" "));
 };
-checkBaggage("I have a laptop, some food and a pocket knife");
-checkBaggage("Socks and camera");
-checkBaggage("Got some snacks and a gun for protection");
+capitalizedName("hello how are you");
+
+//Padding
+const message = "Go to gate number 23!";
+console.log(message.padStart(15, "+")); // given length is less than message than length, so no extra character will be added to the string
+console.log(message.padStart(26, "+").padEnd(30, "+")); // if we give both padStart and padEnd in same line, then it is always better to give small number for padStart than padEnd
+
+//Masking the card detais in real life
+const cardNUmber = function (number) {
+  const str = number + "";
+  const last = str.slice(-4);
+  return last.padStart(str.length, "*");
+};
+console.log(cardNUmber(5698745215987456));
