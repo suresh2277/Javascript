@@ -120,43 +120,72 @@
 // console.log(scorers);
 
 // /************Challenge-3************/
-const gameEvents = new Map([
-  [17, "⚽ GOAL"],
-  [36, "� Substitution"],
-  [47, "⚽ GOAL"],
-  [61, "� Substitution"],
-  [64, "� Yellow card"],
-  [69, "� Red card"],
-  [70, "� Substitution"],
-  [72, "� Substitution"],
-  [76, "⚽ GOAL"],
-  [80, "⚽ GOAL"],
-  [92, "� Yellow card"],
-]);
-// //Task-1
-// const events = [...new Set(gameEvents.values())];
-// console.log(events);
+// const gameEvents = new Map([
+//   [17, "⚽ GOAL"],
+//   [36, "� Substitution"],
+//   [47, "⚽ GOAL"],
+//   [61, "� Substitution"],
+//   [64, "� Yellow card"],
+//   [69, "� Red card"],
+//   [70, "� Substitution"],
+//   [72, "� Substitution"],
+//   [76, "⚽ GOAL"],
+//   [80, "⚽ GOAL"],
+//   [92, "� Yellow card"],
+// ]);
+// // //Task-1
+// // const events = [...new Set(gameEvents.values())];
+// // console.log(events);
 
-//Task - 2
-gameEvents.delete(64);
+// //Task - 2
+// gameEvents.delete(64);
+// // console.log(gameEvents);
+
+// //Task - 3
+// console.log(
+//   `An event happened, on average, every ${90 / gameEvents.size} minutes`
+// );
+
+// //To be precise, game lasted for 92Minutes
+// const time = [...gameEvents.keys()].pop();
+// console.log(time);
+// console.log(
+//   `An event happened, on average, every ${time / gameEvents.size} minutes`
+// );
+
+// //Task-4
 // console.log(gameEvents);
+// for (const [key, value] of gameEvents) {
+//   const half = key <= 45 ? "First Half" : "Second half";
 
-//Task - 3
-console.log(
-  `An event happened, on average, every ${90 / gameEvents.size} minutes`
-);
+//   console.log(`[${half}] ${key} : ${value}`);
+// }
 
-//To be precise, game lasted for 92Minutes
-const time = [...gameEvents.keys()].pop();
-console.log(time);
-console.log(
-  `An event happened, on average, every ${time / gameEvents.size} minutes`
-);
+// /************Challenge-4************/
+//Input - Test data (pasted to textarea, including spaces):
+// underscore_case
+// first_name
+// Some_Variable
+//  calculate_AGE
+// delayed_departure
 
-//Task-4
-console.log(gameEvents);
-for (const [key, value] of gameEvents) {
-  const half = key <= 45 ? "First Half" : "Second half";
+//Expected Output - Should produce this output (5 separate console.log outputs):
+// underscoreCase   ✅
+// firstName        ✅✅
+// someVariable     ✅✅✅
+// calculateAge     ✅✅✅✅
+// delayedDeparture ✅✅✅✅✅
 
-  console.log(`[${half}] ${key} : ${value}`);
-}
+//Solution
+document.querySelector("button").addEventListener("click", function () {
+  const text = document.querySelector("textarea").value;
+  const rows = text.split("\n");
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split("_");
+    const output = `${first} ${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${"✅".repeat(i + 1)}`);
+  }
+});
