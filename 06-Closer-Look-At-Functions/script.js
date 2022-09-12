@@ -104,7 +104,7 @@
 
 // const transformer = function (str, fn) {
 //   console.log(`Original string is ${str}`);
-//   console.log(`Teansformed string is ${fn(str)}`);
+//   console.log(`Transformed string is ${fn(str)}`);
 //   console.log(`Transformed by : ${fn.name}`);
 // };
 
@@ -124,17 +124,76 @@
 // greet("Hey")("Suresh");
 
 /*********Lecture - 133 - The call and apply methods*********/
-const lufthansa = {
-  airLine: "Lufthansa",
-  iataCode: "LH",
-  bookings: [],
-  book(flightNum, name) {
-    console.log(
-      `${name} booked a seat on ${this.airLine} flight ${this.iataCode}${flightNum}`
-    );
-    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
-  },
-};
-lufthansa.book(239, "Suresh");
-lufthansa.book(635, "Teja");
-console.log(lufthansa);
+// const lufthansa = {
+//   airLine: "Lufthansa",
+//   iataCode: "LH",
+//   bookings: [],
+//   book(flightNum, name) {
+//     console.log(
+//       `${name} booked a seat on ${this.airLine} flight ${this.iataCode}${flightNum}`
+//     );
+//     this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+//   },
+// };
+// // lufthansa.book(239, "Suresh");
+// // lufthansa.book(635, "Teja");
+// // console.log(lufthansa);
+
+// const euroWings = {
+//   airLine: "Eurowings",
+//   iataCode: "EW",
+//   bookings: [],
+// };
+// const book = lufthansa.book;
+// // book(245, "Sarah"); // this throws error, since this keyword used in line 133 does not have any reference object/calling object
+// // but we need to use book function to be used by any object which it was called by.
+// //It can be achieved by 3 ways, call, apply and bind
+
+// //a. call
+// book.call(euroWings, 23, "Nikhil");
+// console.log(euroWings);
+
+// const swiss = {
+//   airLine: "Swiss Air Lines",
+//   iataCode: "LX",
+//   bookings: [],
+// };
+// book.call(swiss, 654, "Mary");
+// console.log(swiss);
+
+// //b.apply()
+// const flightData = [583, "George Cooper"];
+// book.apply(swiss, flightData);
+
+// //or
+// book.call(swiss, ...flightData);
+
+/*******************Lecture - 134 - The bind method*******************/
+// lufthansa.planes = 300;
+// lufthansa.buyPlane = function () {
+//   console.log(this);
+//   this.planes++;
+//   console.log(this.planes);
+// };
+// // document.querySelector(".buy").addEventListener("click", lufthansa.buyPlane); // this refers to the button element here.
+// document
+//   .querySelector(".buy")
+//   .addEventListener("click", lufthansa.buyPlane.bind(lufthansa));
+
+// // Paertial Application of blind
+// const addTax = (rate, value) => value + value * rate;
+// console.log(addTax(0.2, 200));
+
+// // If we would like to fix the rate value to 0.23 all the tim e and we want to just pass the value
+// const addVAT = addTax.bind(null, 0.23);
+// console.log(addVAT(120));
+
+// //Same can be written without using bind method
+// const addTaxRate = function (rate) {
+//   return function (value) {
+//     return value + value * rate;
+//   };
+// };
+
+// const addVAT2 = addTaxRate(0.23);
+// console.log(addVAT2(120));
