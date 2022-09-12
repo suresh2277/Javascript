@@ -197,3 +197,69 @@
 
 // const addVAT2 = addTaxRate(0.23);
 // console.log(addVAT2(120));
+
+/**************Lecture - 136 - Immediately Invoked Function Expressions(IIFE)**************/
+// const runOnce = function () {
+//   console.log("This will never run again");
+// };
+// runOnce(); // This can be called any number of times
+
+//IIFE
+// (function () {
+//   console.log("This will never run again");
+// })();
+
+// //Arrow IIFE
+// (() => console.log("This will NEVER run again"))();
+
+/**************Lecture - 137 - Closures**************/
+const secureBooking = function () {
+  let passengerCount = 0;
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+booker(); //1 passengers
+booker(); //2 passengers
+booker(); //3 passengers
+booker(); //4 passengers
+booker(); //5 passengers
+
+/**************Lecture - 138 - More Closure Examples**************/
+//Ex - 1
+let f;
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+f();
+console.dir(f);
+
+h();
+f();
+console.dir(f);
+
+//Ex - 2
+const boardingPass = function (n, wait) {
+  const perGroup = n / 3;
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n} passengers.`);
+    console.log(`There are 3 gorups, each with ${perGroup} passengers.`);
+  }, wait * 1000);
+  console.log(`Will start boarding in ${wait} seconds.`);
+};
+boardingPass(180, 3);
