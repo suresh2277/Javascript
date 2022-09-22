@@ -1,35 +1,4 @@
 "usestrict";
-
-function getValue() {
-  let value = document.getElementById("categories");
-  let selected = [...value.options]
-    .filter((option) => option.selected)
-    .map((option) => option.value);
-  for (let i = 0; i < selected.length; i++) {
-    const newProducts = products.filter(function (category) {
-      if (selected.length === 1) {
-        return category[selected[i]] === "1";
-      } else if (selected.length > 1) {
-        return category[selected[i]] === "1" && category[selected[i + 1]];
-      }
-    });
-    // console.log(newProducts);
-    for (const product of newProducts) {
-      console.log(product.name);
-      // document.querySelector(".product").textContent = product.name;
-    }
-  }
-}
-
-// const categories = [
-//   "brand",
-//   "style",
-//   "travel",
-//   "mobile",
-//   "personal",
-//   "clothing",
-// ];
-
 const products = [
   {
     name: "A",
@@ -57,8 +26,47 @@ const products = [
     brand: "1",
     style: "1",
     mobile: "",
-    travel: "1",
+    travel: "",
     personal: "1",
     clothing: "",
   },
 ];
+
+function getValue() {
+  const productNames = [];
+
+  let value = document.getElementById("categories");
+  let selected = [...value.options]
+    .filter((option) => option.selected)
+    .map((option) => option.value);
+  console.log(selected);
+
+  const final = [];
+  for (let i = 0; i < products.length; i++) {
+    let isTrue = true;
+    for (let j = 0; j < selected.length; j++) {
+      if (products[i][selected[j]] === "") {
+        isTrue = false;
+      }
+    }
+    if (isTrue) {
+      final.push(products[i]);
+    }
+  }
+  const finalProducts = new Set(final);
+  console.log(finalProducts);
+
+  for (const item of finalProducts) {
+    productNames.push(item.name);
+  }
+  if (productNames.length > 0) {
+    document.querySelector(
+      ".product"
+    ).textContent = `Products corresponding to your selection are ${productNames.join(
+      ", "
+    )}`;
+  } else {
+    document.querySelector(".product").textContent =
+      "No corresponding products found";
+  }
+}

@@ -18,3 +18,14 @@ button {
   display: block;
   margin: 20px auto;
 }
+
+option {
+  text-align: center;
+  padding: 5px 10px;
+}
+
+.product {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
